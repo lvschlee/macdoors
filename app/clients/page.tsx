@@ -9,38 +9,31 @@ import {
   ThemeProvider,
   FirstDisplayedItemsCount,
   LastDisplayedItemsCount,
-  withTableCopy,
 } from "@gravity-ui/uikit";
+import ButtonBack from "../_components/ButtonBack";
 
-const MyTable = withTableCopy(Table);
+import "./styles.css";
+
 const data = [
-  { id: 1, text: "Hello" },
-  { id: 2, text: <Label>test</Label> },
+  { key: "Фамилия, имя, отчество", value: "Анатольев Анатолий Анатольевич" },
+  { key: "Номер телефона", value: "+7 90909090" },
+  { key: "Электронная почта", value: "example23@yandex.ru" },
+  { key: "Город", value: "Челябинск" },
+  { key: "Адрес", value: "ул. Пушкина, д. 12, кв. 12 678901", align: "left" },
+  { key: "Рассылка", value: <Label theme="success">Включена</Label> },
 ];
 const columns = [
-  { id: "id", meta: { copy: ({ id }) => `ID #${id}` } },
-  { id: "text", meta: { copy: true } },
+  { id: "key", meta: { copy: true } },
+  { id: "value", meta: { copy: true } },
 ];
 
 const items = [
   {
-    text: "Region",
+    text: "Клиенты",
     action: () => {},
   },
   {
-    text: "Country",
-    action: () => {},
-  },
-  {
-    text: "City",
-    action: () => {},
-  },
-  {
-    text: "District",
-    action: () => {},
-  },
-  {
-    text: "Street",
+    text: "Информация о клиенте",
     action: () => {},
   },
 ];
@@ -48,17 +41,31 @@ const items = [
 export default function Clients() {
   return (
     <ThemeProvider theme="light">
-      <div>
-        <Text variant="header-2">Clients</Text>
-        <Breadcrumbs
-          items={items}
-          firstDisplayedItemsCount={FirstDisplayedItemsCount.One}
-          lastDisplayedItemsCount={LastDisplayedItemsCount.One}
-        />
-        <MyTable data={data} columns={columns} />
-        <Button view="action" size="m">
-          Test
-        </Button>
+      <div className="my-container">
+        <div>
+          <ButtonBack></ButtonBack>
+        </div>
+
+        <header>
+          <Text variant="header-2">Информация о клиенте</Text>
+        </header>
+        <div>
+          <Breadcrumbs
+            items={items}
+            firstDisplayedItemsCount={FirstDisplayedItemsCount.One}
+            lastDisplayedItemsCount={LastDisplayedItemsCount.One}
+          />
+        </div>
+
+        <div>
+          <Table data={data} columns={columns} className="my-table" />
+        </div>
+
+        <footer>
+          <Button view="normal" size="m">
+            Редактировать информацию
+          </Button>
+        </footer>
       </div>
     </ThemeProvider>
   );
