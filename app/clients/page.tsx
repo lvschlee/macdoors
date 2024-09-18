@@ -4,27 +4,49 @@ import {
   Text,
   Table,
   Button,
-  Breadcrumbs,
   Label,
   ThemeProvider,
-  FirstDisplayedItemsCount,
-  LastDisplayedItemsCount,
+  TextInput,
+  Select,
+  withTableSettings,
+  withTableActions,
+  Pagination,
 } from "@gravity-ui/uikit";
-import ButtonBack from "../_components/ButtonBack";
 
 import "./styles.css";
+import React from "react";
 
 const data = [
-  { key: "Фамилия, имя, отчество", value: "Анатольев Анатолий Анатольевич" },
-  { key: "Номер телефона", value: "+7 90909090" },
-  { key: "Электронная почта", value: "example23@yandex.ru" },
-  { key: "Город", value: "Челябинск" },
-  { key: "Адрес", value: "ул. Пушкина, д. 12, кв. 12 678901", align: "left" },
-  { key: "Рассылка", value: <Label theme="success">Включена</Label> },
+  {
+    id: 1,
+    name: "Иванов Иван Иванович",
+    phone: "+79993384561",
+    mail: "example3Vladimir@yandex.ru",
+    city: "Челябинск",
+    adress: "Кыштымское шоссе, д. 50, 50340",
+    orders: "1",
+    value: <Label theme="success">Включена</Label>,
+  },
+  {
+    id: 1,
+    name: "Петров Петр Петрович",
+    phone: "+79993384561",
+    mail: "example3Vlcadimir@yandex.ru",
+    city: "Миасс",
+    adress: "Уктусская,47 ",
+    orders: "12",
+    value: <Label theme="danger">Включена</Label>,
+  },
 ];
 const columns = [
-  { id: "key", meta: { copy: true } },
-  { id: "value", meta: { copy: true } },
+  { id: "id", name: "#" },
+  { id: "name", name: "ФИО" },
+  { id: "phone", name: "Телефон" },
+  { id: "mail", name: "Электронная почта" },
+  { id: "city", name: "Город" },
+  { id: "adress", name: "Адресс" },
+  { id: "orders", name: "Заказы" },
+  { id: "value", name: "Статус рассылки" },
 ];
 
 const items = [
@@ -38,33 +60,53 @@ const items = [
   },
 ];
 
+const MyTable = withTableSettings(Table);
+
 export default function Clients() {
+  const [settings, setSettings] = React.useState([]);
+
   return (
     <ThemeProvider theme="light">
       <div className="my-container">
-        <div>
-          <ButtonBack></ButtonBack>
+        <header>
+          <Text variant="header-2">Клиенты</Text>
+        </header>
+        <div className="my-controls">
+          <div className="my-input-container">
+            <TextInput placeholder="Placeholder" />
+          </div>
+          <div>
+            <Select size="m" placeholder="M Size" className="my-select">
+              <Select.Option value="val_1">Value 1</Select.Option>
+            </Select>
+          </div>
+          <div>
+            <Button view="action" size="m">
+              Добавить клиента
+            </Button>
+          </div>
         </div>
 
-        <header>
-          <Text variant="header-2">Информация о клиенте</Text>
-        </header>
         <div>
-          <Breadcrumbs
-            items={items}
-            firstDisplayedItemsCount={FirstDisplayedItemsCount.One}
-            lastDisplayedItemsCount={LastDisplayedItemsCount.One}
+          <MyTable
+            updateSettings={() => {
+              setSettings([]);
+              return Promise.resolve();
+            }}
+            settings={settings}
+            data={data}
+            columns={columns}
+            className="my-table"
           />
         </div>
 
-        <div>
-          <Table data={data} columns={columns} className="my-table" />
-        </div>
-
-        <footer>
-          <Button view="normal" size="m">
-            Редактировать информацию
-          </Button>
+        <footer className="my-footer">
+          <Pagination
+            page={1}
+            pageSize={100}
+            total={1000}
+            onUpdate={() => {}}
+          />
         </footer>
       </div>
     </ThemeProvider>

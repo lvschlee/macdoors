@@ -1,16 +1,31 @@
 .my-container {
-    display: grid;
-    gap: 16px;
+  display: grid;
+  gap: 16px;
 }
 
 .my-table > table {
-    width: 500px;
+  width: 100%;
 }
 
 .my-table .g-table__row .g-table__cell:last-child {
-    text-align: right;
+  text-align: right;
 }
 
-.my-table .g-table__head {
-    display: none;
+.my-controls {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+}
+
+.my-input-container {
+  flex: 1;
+}
+
+.my-select {
+  width: 300px;
+}
+
+.my-footer {
+  display: flex;
+  justify-content: center;
 }
