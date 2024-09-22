@@ -9,11 +9,14 @@ import {
   TextInput,
   Select,
   withTableSettings,
+  withTableActions,
   Pagination,
+  Modal,
 } from "@gravity-ui/uikit";
 
 import "./styles.css";
 import React from "react";
+import Dialog from "@/app/_components/Dialog";
 
 const data = [
   {
@@ -63,9 +66,18 @@ const MyTable = withTableSettings(Table);
 
 export default function Clients() {
   const [settings, setSettings] = React.useState([]);
+  const [open, setOpen] = React.useState(false);
 
   return (
     <ThemeProvider theme="light">
+      <div>
+        <div>
+          <Button onClick={() => setOpen(true)}>Open Modal</Button>
+          <Dialog open={open} title="Удалить клиента">
+            Вы действительно хотите удалить данные клиента?
+          </Dialog>
+        </div>
+      </div>
       <div className="my-container">
         <header>
           <Text variant="header-2">Клиенты</Text>
