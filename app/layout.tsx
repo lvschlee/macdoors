@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Sidebar from "./_components/Sidebar";
 
 import '@gravity-ui/uikit/styles/fonts.css';
 import '@gravity-ui/uikit/styles/styles.css';
 
 import "./globals.css";
+import "normalize.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +22,15 @@ export default function RootLayout({
       <body
         className={'g-root g-root_theme_light antialiased'}
       >
-        {children}
+        <div className="page">
+          <aside>
+            <Sidebar />
+          </aside>
+
+          <div className="page__content">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
