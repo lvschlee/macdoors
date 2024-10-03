@@ -18,35 +18,41 @@ import React from "react";
 const data = [
   {
     id: 1,
-    title: "Дуб шале темный",
-    description: "Мы снимаем с произв...",
-    date: "05.04.2017",
+    name: "Петров Петр Петрович",
+    phone: "+79993384561",
+    manager: "СТМ - 1",
+    city: "Миасс",
+    adress: "Уктусская,47 ",
+    amount: "9.800 р",
     tags: <Label theme="danger">Распродажа</Label>,
   },
 ];
 
 const columns = [
   { id: "id", name: "#" },
-  { id: "title", name: "Заголовок" },
-  { id: "description", name: "Содержание" },
-  { id: "date", name: "Дата создания" },
+  { id: "name", name: "Клиент" },
+  { id: "phone", name: "Телефон" },
+  { id: "manager", name: "Продавец" },
+  { id: "city", name: "Город" },
+  { id: "adress", name: "Адресс" },
+  { id: "amount", name: "Сумма" },
   { id: "tags", name: "Метки" },
 ];
 
 const MyTable = withTableSettings(Table);
 
-export default function News() {
+export default function Orders() {
   const [settings, setSettings] = React.useState([]);
 
   return (
     <ThemeProvider theme="light">
       <div className="my-container">
         <header>
-          <Text variant="header-2">Новости</Text>
+          <Text variant="header-2">Заказы</Text>
         </header>
         <div className="my-controls">
           <div className="my-input-container">
-            <TextInput placeholder="Фильтровать по заголовку новости или описанию" />
+            <TextInput placeholder="Поиск клиента по ФИО или адресу" />
           </div>
           <div>
             <Select size="m" placeholder="M Size" className="my-select">
@@ -55,7 +61,7 @@ export default function News() {
           </div>
           <div>
             <Button view="action" size="m">
-              Добавить новость
+              Создать заказ
             </Button>
           </div>
         </div>
