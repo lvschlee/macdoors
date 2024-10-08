@@ -27,7 +27,7 @@ export default function ClientsCreate() {
   return (
     <ThemeProvider theme="light">
       <div className="my-form-page">
-        <header>
+        <header className="my-header">
           <Text variant="header-2">Добавить клиента</Text>
           <div>
             <Breadcrumbs

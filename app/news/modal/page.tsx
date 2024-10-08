@@ -14,6 +14,7 @@ import {
 
 import "./styles.css";
 import React from "react";
+import Dialog from "@/app/_components/Dialog";
 
 const data = [
   {
@@ -62,11 +63,20 @@ const items = [
 
 const MyTable = withTableSettings(Table);
 
-export default function News() {
+export default function Clients() {
   const [settings, setSettings] = React.useState([]);
+  const [open, setOpen] = React.useState(false);
 
   return (
     <ThemeProvider theme="light">
+      <div>
+        <div>
+          <Button onClick={() => setOpen(true)}>Open Modal</Button>
+          <Dialog open={open} title="Удалить новость">
+            Вы действительно хотите удалить новость?
+          </Dialog>
+        </div>
+      </div>
       <div className="my-container">
         <header>
           <Text variant="header-2">Новости</Text>

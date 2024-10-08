@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gravity-ui/date-components": "^2.10.1",
     "@gravity-ui/icons": "^2.11.0",
     "@gravity-ui/navigation": "^2.23.1",
     "@gravity-ui/uikit": "^6.26.0",

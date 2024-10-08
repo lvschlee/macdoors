@@ -10,7 +10,7 @@
 }
 
 .my-form {
-  width: 350px;
+  width: 715px;
   display: grid;
   gap: 24px;
 }
@@ -23,11 +23,7 @@
 .my-form-item-row {
   display: flex;
   gap: 25px;
-}
-
-.my-address-row {
-  display: flex;
-  gap: 37px;
+  align-items: center;
 }
 
 .my-footer-buttons {
