@@ -37,6 +37,7 @@ const data = [
     value: <Label theme="danger">Включена</Label>,
   },
 ];
+
 const columns = [
   { id: "id", name: "#" },
   { id: "name", name: "ФИО" },

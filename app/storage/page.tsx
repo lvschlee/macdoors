@@ -15,38 +15,24 @@ import {
 import "./styles.css";
 import React from "react";
 
-const data = [
-  {
-    id: 1,
-    title: "Дуб шале темный",
-    description: "Мы снимаем с произв...",
-    date: "05.04.2017",
-    tags: <Label theme="danger">Распродажа</Label>,
-  },
-];
+const data = [];
 
-const columns = [
-  { id: "id", name: "#" },
-  { id: "title", name: "Заголовок" },
-  { id: "description", name: "Содержание" },
-  { id: "date", name: "Дата создания" },
-  { id: "tags", name: "Метки" },
-];
+const columns = [];
 
 const MyTable = withTableSettings(Table);
 
-export default function News() {
+export default function Storage() {
   const [settings, setSettings] = React.useState([]);
 
   return (
     <ThemeProvider theme="light">
       <div className="my-container">
         <header>
-          <Text variant="header-2">Новости</Text>
+          <Text variant="header-2">Склад</Text>
         </header>
         <div className="my-controls">
           <div className="my-input-container">
-            <TextInput placeholder="Фильтровать по заголовку новости или описанию" />
+            <TextInput placeholder="Фильтровать по названию" />
           </div>
           <div>
             <Select size="m" placeholder="M Size" className="my-select">
@@ -55,7 +41,7 @@ export default function News() {
           </div>
           <div>
             <Button view="action" size="m">
-              Добавить новость
+              Создать заказ
             </Button>
           </div>
         </div>

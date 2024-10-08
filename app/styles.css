@@ -1,0 +1,29 @@
+.news-list {
+  display: grid;
+  gap: 25px;
+  grid-auto-rows: max-content;
+}
+
+.main-page {
+  display: grid;
+  height: 100%;
+  gap: 16px;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px;
+}
+
+.my-card {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}
+
+.my-footer {
+  display: flex;
+  justify-content: center;
+}
