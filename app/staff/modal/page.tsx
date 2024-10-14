@@ -9,12 +9,14 @@ import {
   TextInput,
   Select,
   withTableSettings,
+  withTableActions,
   Pagination,
+  Modal,
 } from "@gravity-ui/uikit";
 
 import "./styles.css";
 import React from "react";
-import { useRouter } from "next/navigation";
+import Dialog from "@/app/_components/Dialog";
 
 const data = [
   {
@@ -38,7 +40,6 @@ const data = [
     value: <Label theme="danger">Включена</Label>,
   },
 ];
-
 const columns = [
   { id: "id", name: "#" },
   { id: "name", name: "ФИО" },
@@ -64,11 +65,19 @@ const items = [
 const MyTable = withTableSettings(Table);
 
 export default function Clients() {
-  const router = useRouter();
   const [settings, setSettings] = React.useState([]);
+  const [open, setOpen] = React.useState(false);
 
   return (
     <ThemeProvider theme="light">
+      <div>
+        <div>
+          <Button onClick={() => setOpen(true)}>Open Modal</Button>
+          <Dialog open={open} title="Удалить клиента">
+            Вы действительно хотите удалить данные клиента?
+          </Dialog>
+        </div>
+      </div>
       <div className="my-container">
         <header>
           <Text variant="header-2">Клиенты</Text>
@@ -83,9 +92,7 @@ export default function Clients() {
             </Select>
           </div>
           <div>
-            <Button view="action" size="m" onClick={() => {
-              router.push('/clients/create')
-            }}>
+            <Button view="action" size="m">
               Добавить клиента
             </Button>
           </div>

@@ -65,7 +65,7 @@ export default function Sidebar() {
       title: "Персонал",
       icon: Persons,
       onItemClick() {
-        router.push("/employees");
+        router.push("/staff");
       },
     },
     {
