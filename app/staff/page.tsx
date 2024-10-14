@@ -19,11 +19,38 @@ import "./styles.css";
 import React from "react";
 import { useRouter } from "next/navigation";
 
-const dataDepartaments: TableDataItem[] = [];
-const columnsDepartaments: TableColumnConfig<any>[] = [];
+const dataDepartaments: TableDataItem[] = [{
+  id: 1,
+  name: 'Фабрика дверей "МакДорс"',
+  phone: "+79993384561",
+  mail: "05.04.2017",
+  city: "05.04.2017",
+  address: "05.04.2017",
+  
+},];
+const columnsDepartaments: TableColumnConfig<any>[] = [
+  { id: "id", name: "#" },
+  { id: "name", name: "Название" },
+  { id: "phone", name: "Телефон" },
+  { id: "mail", name: "Электронная почта" },
+  { id: "city", name: "Город" },
+  { id: "address", name: "Адресс" },
+];
 
-const dataEmployees: TableDataItem[] = [];
-const columnsEmployees: TableColumnConfig<any>[] = [];
+const dataEmployees: TableDataItem[] = [{
+  id: 1,
+  title: "Дуб шале темный",
+  description: "Мы снимаем с произв...",
+  date: "05.04.2017",
+  tags: <Label theme="danger">Распродажа</Label>,
+},];
+const columnsEmployees: TableColumnConfig<any>[] = [
+  { id: "id", name: "#" },
+  { id: "title", name: "Заголовок" },
+  { id: "description", name: "Содержание" },
+  { id: "date", name: "Дата создания" },
+  { id: "tags", name: "Метки" },
+];
 
 const MyTable = withTableSettings(Table);
 
