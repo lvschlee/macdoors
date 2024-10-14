@@ -10,14 +10,15 @@ import {
   Select,
   withTableSettings,
   Pagination,
+  TableDataItem,
+  TableColumnConfig,
 } from "@gravity-ui/uikit";
 
 import "./styles.css";
 import React from "react";
 
-const data = [];
-
-const columns = [];
+const data: TableDataItem[] = [];
+const columns: TableColumnConfig<unknown>[] = [];
 
 const MyTable = withTableSettings(Table);
 

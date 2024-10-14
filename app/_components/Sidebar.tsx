@@ -12,7 +12,6 @@ import {
 } from "@gravity-ui/icons";
 import { AsideHeader, MenuItem } from "@gravity-ui/navigation";
 import { useState } from "react";
-import SidebarLogo from "./SidebarLogo";
 import { useRouter } from "next/navigation";
 
 export default function Sidebar() {
