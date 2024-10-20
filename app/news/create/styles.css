@@ -1,0 +1,32 @@
+
+.my-header{
+  display: grid;
+  gap: 16px;
+}
+
+.my-form-page {
+  display: grid;
+  gap: 16px;
+}
+
+.my-form {
+  width: 715px;
+  display: grid;
+  gap: 24px;
+}
+
+.my-form-item {
+  display: grid;
+  gap: 8px;
+}
+
+.my-form-item-row {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.my-footer-buttons {
+  display: flex;
+  gap: 12px;
+}
