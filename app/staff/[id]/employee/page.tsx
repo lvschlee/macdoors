@@ -10,7 +10,7 @@ import {
   FirstDisplayedItemsCount,
   LastDisplayedItemsCount,
 } from "@gravity-ui/uikit";
-import ButtonBack from "../../_components/ButtonBack";
+import ButtonBack from "../../../_components/ButtonBack";
 
 import "./styles.css";
 
@@ -18,9 +18,8 @@ const data = [
   { key: "Фамилия, имя, отчество", value: "Анатольев Анатолий Анатольевич" },
   { key: "Номер телефона", value: "+7 90909090" },
   { key: "Электронная почта", value: "example23@yandex.ru" },
-  { key: "Город", value: "Челябинск" },
-  { key: "Адрес", value: "ул. Пушкина, д. 12, кв. 12 678901", align: "left" },
-  { key: "Рассылка", value: <Label theme="success">Включена</Label> },
+  { key: "Должность", value: "Менеджер" },
+  { key: "Отдел", value: 'Магазин "МакДорс"', align: "left" },
 ];
 const columns = [
   { id: "key", meta: { copy: true } },
@@ -29,11 +28,11 @@ const columns = [
 
 const items = [
   {
-    text: "Клиенты",
+    text: "Персонал",
     action: () => {},
   },
   {
-    text: "Информация о клиенте",
+    text: "Информация о сотруднике",
     action: () => {},
   },
 ];
@@ -47,7 +46,7 @@ export default function Clients() {
         </div>
 
         <header>
-          <Text variant="header-2">Информация о клиенте</Text>
+          <Text variant="header-2">Информация о сотруднике</Text>
         </header>
         <div>
           <Breadcrumbs

@@ -1,0 +1,16 @@
+.my-container {
+  display: grid;
+  gap: 16px;
+}
+
+.my-table > table {
+  width: 500px;
+}
+
+.my-table .g-table__row .g-table__cell:last-child {
+  text-align: right;
+}
+
+.my-table .g-table__head {
+  display: none;
+}
