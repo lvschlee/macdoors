@@ -39,17 +39,19 @@ const columnsDepartaments: TableColumnConfig<any>[] = [
 
 const dataEmployees: TableDataItem[] = [{
   id: 1,
-  title: "Дуб шале темный",
-  description: "Мы снимаем с произв...",
-  date: "05.04.2017",
-  tags: <Label theme="danger">Распродажа</Label>,
+  title: "Иванов Иван Иванович",
+  phone: "+79993384561",
+  mail: "example3Vladimir@yandex.ru",
+  position: "Менеджер",
+  department: "Кыштымское шоссе, д. 50, 50340",
 },];
 const columnsEmployees: TableColumnConfig<any>[] = [
   { id: "id", name: "#" },
-  { id: "title", name: "Заголовок" },
-  { id: "description", name: "Содержание" },
-  { id: "date", name: "Дата создания" },
-  { id: "tags", name: "Метки" },
+  { id: "title", name: "Фамилия Имя Отчество" },
+  { id: "phone", name: "Телефон" },
+  { id: "mail", name: "Электронная почта" },
+  { id: "position", name: "Должность" },
+  { id: "department", name: "Отдел" },
 ];
 
 const MyTable = withTableSettings(Table);

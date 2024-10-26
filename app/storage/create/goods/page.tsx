@@ -8,17 +8,19 @@ import {
   ThemeProvider,
   TextInput,
   Switch,
-  Button
+  Button,
+  Select
 } from "@gravity-ui/uikit";
 import "./styles.css";
+import { DatePicker } from "@gravity-ui/date-components";
 
 const items = [
   {
-    text: "Персонал",
+    text: "Склад",
     action: () => {},
   },
   {
-    text: "Добавить сотрудника",
+    text: "Добавить продукцию",
     action: () => {},
   },
 ];
@@ -28,7 +30,7 @@ export default function StaffDepartamentCreate() {
     <ThemeProvider theme="light">
       <div className="my-form-page">
         <header className="my-header">
-          <Text variant="header-2">Добавить сотрудника</Text>
+          <Text variant="header-2">Добавить продукцию</Text>
           <div>
             <Breadcrumbs
               items={items}
@@ -41,49 +43,39 @@ export default function StaffDepartamentCreate() {
           <form className="my-form" action="">
             <div className="my-form-item">
               <label htmlFor="">
-                <Text variant="subheader-1">Фамилия</Text>
+                <Text variant="subheader-1">Название</Text>
               </label>
               <TextInput size="l"></TextInput>
             </div>
             <div className="my-form-item">
               <label htmlFor="">
-                <Text variant="subheader-1">Имя</Text>
+                <Text variant="subheader-1">Дата изготовления</Text>
               </label>
-              <TextInput size="l"></TextInput>
+              <DatePicker size="l"></DatePicker>
             </div>
+
             <div className="my-form-item">
               <label htmlFor="">
-                <Text variant="subheader-1">Отчество</Text>
+                <Text variant="subheader-1">Атрибуты</Text>
               </label>
-              <TextInput size="l"></TextInput>
+              <Select size="l"></Select>
             </div>
+
             <div className="my-form-item">
               <label htmlFor="">
-                <Text variant="subheader-1">Телефон</Text>
+                <Text variant="subheader-1">Количество</Text>
               </label>
               <TextInput size="l"></TextInput>
             </div>
 
             <div className="my-form-item">
               <label htmlFor="">
-                <Text variant="subheader-1">Электронная почта</Text>
+                <Text variant="subheader-1">Описание</Text>
               </label>
               <TextInput size="l"></TextInput>
             </div>
+            
 
-            <div className="my-form-item">
-              <label htmlFor="">
-                <Text variant="subheader-1">Должность</Text>
-              </label>
-              <TextInput size="l"></TextInput>
-            </div>
-
-            <div className="my-form-item">
-              <label htmlFor="">
-                <Text variant="subheader-1">Отдел</Text>
-              </label>
-              <TextInput size="l"></TextInput>
-            </div>
             <div className="my-footer-buttons">
               <Button view="action" size="l">Сохранить</Button>
               <Button view="outlined" size="l">Отменить</Button>
